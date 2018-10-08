@@ -10,4 +10,6 @@ CI-6227 Data Mining Project NTU Fall 2018
 
 3. Implement the gradient boosting by using CatBoost Library
 
-4. Result analysis and visualization
+4. Tune the model and imporve the performance
+
+5. Result analysis and visualization

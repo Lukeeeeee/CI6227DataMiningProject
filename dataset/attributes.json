@@ -1,0 +1,94 @@
+{
+  "SPEED": {
+    "RANGE": [
+      0,
+      10.0
+    ],
+    "TYPE": "CONTINUOUS"
+  },
+  "HEIGHT": {
+    "RANGE": [
+      150.0,
+      200.0
+    ],
+    "TYPE": "CONTINUOUS"
+  },
+  "WEIGHT": {
+    "RANGE": [
+      60.0,
+      100.0
+    ],
+    "TYPE": "CONTINUOUS"
+  },
+  "AVE_SCORE": {
+    "RANGE": [
+      0.0,
+      10.0
+    ],
+    "TYPE": "CONTINUOUS"
+  },
+  "AVE_ASSISTANCE": {
+    "RANGE": [
+      0.0,
+      10.0
+    ],
+    "TYPE": "CONTINUOUS"
+  },
+  "AVE_STEALING": {
+    "RANGE": [
+      0.0,
+      10.0
+    ],
+    "TYPE": "CONTINUOUS"
+  },
+  "AVE_TACKLING": {
+    "RANGE": [
+      0.0,
+      10.0
+    ],
+    "TYPE": "CONTINUOUS"
+  },
+  "AVE_FOUL": {
+    "RANGE": [
+      0.0,
+      10.0
+    ],
+    "TYPE": "CONTINUOUS"
+  },
+  "SAVING_TIME": {
+    "RANGE": [
+      0,
+      20
+    ],
+    "STEP": 1,
+    "TYPE": "ORDINAL"
+  },
+  "AGE": {
+    "RANGE": [
+      17,
+      40
+    ],
+    "STEP": 1,
+    "TYPE": "ORDINAL"
+  },
+  "NATION": {
+    "VALUE": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "TYPE": "CATEGORICAL"
+  },
+  "YELLOW_RED_CARD_NUMBER": {
+    "RANGE": [0, 10],
+    "STEP": 1,
+    "TYPE": "ORDINAL"
+  }
+}

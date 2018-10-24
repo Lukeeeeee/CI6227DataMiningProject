@@ -6,7 +6,9 @@
     "ATTACKERS": 3
   },
   "CLASS_WEIGHT_WITH_ATTR": {
-    "AGE": [0, 0, 0, 0],
+    "AGE": {
+      "WEIGHT": [0, 0, 0, 0]
+    },
     "AVE_ASSISTANCE": [-1, 0, 1, 2],
     "AVE_FOUL": [0, 3, 2, 1],
     "AVE_SCORE": [0, 1, 2, 3],

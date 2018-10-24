@@ -23,6 +23,7 @@ class LabelGenerator(object):
         # So we use a m x n matrix to
         # compute the sum contribution over all attributes of one sample w.r.t. each label
         # The label with maximum value will be the ground truth of this sample
+        # TODO treat some continuous label to be categorical
         label_score_list = np.zeros(len(self.label_config['CLASS_DICT']))
         for key, val in sample.items():
             res = np.array(self.label_config['CLASS_WEIGHT_WITH_ATTR'][key], dtype=np.float32) * val
@@ -32,8 +33,7 @@ class LabelGenerator(object):
         for key, val in self.label_config['CLASS_DICT'].items():
             if val == label:
                 sample['LABEL_NAME'] = key
-        # TODO
-        # add random noise for label
+        # TODO add random noise for label
         return label, sample
 
 

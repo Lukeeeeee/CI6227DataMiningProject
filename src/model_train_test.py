@@ -7,8 +7,8 @@ import os
 
 class Classifier(object):
 
-    def __init__(self, dataset_file_path, dataset_split_ration=0.8, train_iter=10, depth=2, learing_rate=1.0,
-                 loss='LogLoss', logging_level='Verbose'):
+    def __init__(self, dataset_file_path, dataset_split_ration=0.8, train_iter=10, depth=10, learing_rate=0.1,
+                 loss='MultiClass', logging_level='Verbose'):
         self.dataset = load_json(file_path=dataset_file_path)
         dataset_num = len(self.dataset)
         self.train_set = self.dataset[:int(dataset_num * dataset_split_ration)]
@@ -17,8 +17,8 @@ class Classifier(object):
         self.test_attr_set, self.test_label_set = self._process_dataset(dataset=self.test_set)
         self.model = CatBoostClassifier(iterations=train_iter,
                                         depth=depth,
+                                        loss_function=loss,
                                         learning_rate=learing_rate,
-                                        # loss_function=loss,
                                         logging_level=logging_level)
 
     def train(self):
@@ -27,6 +27,7 @@ class Classifier(object):
 
     def test(self):
         res = self.model.predict(self.test_attr_set)
+        print(res)
         acc = np.sum([1 if res[i] == self.test_label_set[i] else 0 for i in range(len(self.test_label_set))]) /\
               len(self.test_attr_set)
         print("accuracy is %f" % acc)
@@ -52,6 +53,6 @@ class Classifier(object):
 
 
 if __name__ == '__main__':
-   a = Classifier(dataset_file_path=os.path.join(DATASET_PATH, 'attr_label_dataset.json'), train_iter=5)
+   a = Classifier(dataset_file_path=os.path.join(DATASET_PATH, 'attr_label_dataset.json'), train_iter=70)
    a.train()
    a.test()

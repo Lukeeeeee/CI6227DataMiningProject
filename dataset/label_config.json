@@ -6,19 +6,17 @@
     "ATTACKERS": 3
   },
   "CLASS_WEIGHT_WITH_ATTR": {
-    "AGE": {
-      "WEIGHT": [0, 0, 0, 0]
-    },
-    "AVE_ASSISTANCE": [-1, 0, 1, 2],
-    "AVE_FOUL": [0, 3, 2, 1],
-    "AVE_SCORE": [0, 1, 2, 3],
-    "AVE_STEALING": [0, 3, 2, 1],
-    "AVE_TACKLING": [0, 3, 2, 1],
+    "AGE": [0, 0, 0, 0],
+    "AVE_ASSISTANCE": [-2, 0, 2, 5],
+    "AVE_FOUL": [0, 3, 1, -1],
+    "AVE_SCORE": [0, -2, 2, 5],
+    "AVE_STEALING": [0, 3, 1, -1],
+    "AVE_TACKLING": [0, 3, 1, -1],
     "HEIGHT": [0, 0, 0, 0],
     "NATION": [0, 0, 0, 0],
     "SAVING_TIME": [100, -100, -100, -100],
-    "SPEED": [0, 0 , 0 , 0],
+    "SPEED": [0, -1, 2, 4],
     "WEIGHT": [0, 0, 0, 0],
-    "YELLOW_RED_CARD_NUMBER": [1, 5, 3, 1]
+    "YELLOW_RED_CARD_NUMBER": [1, 5, 3, -1]
   }
 }

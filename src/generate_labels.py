@@ -11,12 +11,20 @@ class LabelGenerator(object):
         self.label_config = load_json(file_path=label_config_file_path)
         self.attr_config = load_json(file_path=attr_config_file_path)
         self.final_dataset = []
+        self.label_count = {}
 
     def process_data(self):
         for sample in self.attr_dataset:
-            label, new_sample = self._compute_label_with_one_sample(sample=sample)
+            label, new_sample, key = self._compute_label_with_one_sample(sample=sample)
+            if not new_sample:
+                continue
+            if key not in self.label_count:
+                self.label_count[key] = 1
+            else:
+                self.label_count[key] += 1
             self.final_dataset.append(new_sample)
         export_json(file_path=os.path.join(DATASET_PATH, 'attr_label_dataset.json'), dict=self.final_dataset)
+        export_json(file_path=os.path.join(DATASET_PATH, 'label_stat.json'), dict=self.label_count)
 
     def _compute_label_with_one_sample(self, sample):
         # Compute each attribute's contribution to each label,
@@ -38,12 +46,14 @@ class LabelGenerator(object):
                 res = np.array(self.label_config['CLASS_WEIGHT_WITH_ATTR'][key], dtype=np.float32) * normalized_val
             label_score_list += res
         label = np.argmax(label_score_list)
-        sample['LABEL'] = int(label)
-        for key, val in self.label_config['CLASS_DICT'].items():
-            if val == label:
-                sample['LABEL_NAME'] = key
-        # TODO add random noise for label
-        return label, sample
+        if ((label_score_list[label] - np.mean(label_score_list)) / np.mean(label_score_list)) < 0.2:
+            return None, None, None
+        else:
+            sample['LABEL'] = int(label)
+            for key, val in self.label_config['CLASS_DICT'].items():
+                if val == label:
+                    sample['LABEL_NAME'] = key
+            return label, sample, sample['LABEL_NAME']
 
     def _compute_score_for_height(self, val):
         # normalized height = [0, 1], if height in [0.0 - 0.5] then we set score for 4 labels as [0, 0, 1, 1]

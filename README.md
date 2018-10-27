@@ -50,3 +50,18 @@ to classify football player into different roles:
 For attributes, considering its contribution or weight to different label. 
 
 For continuous data, first scale it into `[0, 1]`, 
+
+
+### Experiments Design
+```
+1. dataset generation tuning
+    1.1 Tunign the weight parameters, the distrution changes on label, 
+    e.g. how the weight effect the decision on label
+    
+2. Classfication tuning
+    2.1 Hyper parameters searching on train step, learning rate, loss function(?)
+    
+3. Feature importance
+    3.1 tuning the weight parameters of dataset generation and 
+        under the same clasffication setting, how the feature importance change 
+```

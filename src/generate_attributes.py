@@ -92,5 +92,5 @@ if __name__ == '__main__':
     from dataset import DATASET_PATH
 
     a = AttributesGenerator(attr_config_file_path=os.path.join(DATASET_PATH, 'attributes_config.json'),
-                            sample_number=10000)
+                            sample_number=1000)
     export_json(file_path=os.path.join(DATASET_PATH, 'attr_dataset.json'), dict=a.dataset)

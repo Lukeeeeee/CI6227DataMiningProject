@@ -9,6 +9,8 @@ def load_json(file_path):
 
 
 def export_json(file_path, dict):
+    if not os.path.exists(os.path.dirname(file_path)):
+        os.mkdir(path=os.path.dirname(file_path))
     with open(file_path, 'w') as f:
         json.dump(dict, f, indent=4, sort_keys=True)
 

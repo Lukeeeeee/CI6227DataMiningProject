@@ -95,12 +95,15 @@ class Classifier(object):
 
 if __name__ == '__main__':
     lr = [0.01, 0.03, 0.1, 0.3]
-    for lr_i in lr:
+    depth = [1, 2, 3, 4, 6, 8, 10, 12, 14]
+    train_iter = [10, 50, 100, 300, 500]
+    for de in depth:
         a = Classifier(dataset_file_path=os.path.join(DATASET_PATH, '1000_dataset', 'attr_label_dataset.json'),
                        test_dataset_file_path=os.path.join(DATASET_PATH, 'test_dataset', 'attr_label_dataset.json'),
                        train_iter=100,
-                       learing_rate=lr_i)
+                       depth=de,
+                       learing_rate=0.1)
         a.train()
         a.feature_importance()
         a.test()
-        a.export_res(path='1000_dataset', file_name='learing_rate_%f' % lr_i)
+        a.export_res(path='1000_dataset', file_name='depth_%d' % de)

@@ -2,7 +2,7 @@ rm(list=ls())
 library(jsonlite)
 ###Stringify some data from data frame to JSON
 
-data <- fromJSON("attr_label_dataset.json")
+
 x <- vector()
 y <- vector()
 
@@ -34,7 +34,7 @@ y[8] <- depth8$FINAL_TEST_ACCURACY
 depth9 <- fromJSON("~/dev/CI6227DataMiningProject/log/1000_dataset/depth_14")
 x[9] <- depth9$EXP_CONFIG$DEPTH
 y[9] <- depth9$FINAL_TEST_ACCURACY
-plot(x,y,type="l",col="red",lty=1,xlab="Depth",ylab="Test Accuracy",ylim=c(0.8,1))
+plot(x,y,type="o",col="red",lty=1,xlab="Depth",ylab="Test Accuracy",ylim=c(0.8,1))
 
 depth1 <- fromJSON("~/dev/CI6227DataMiningProject/log/5000_dataset/depth_1")
 x[1] <- depth1$EXP_CONFIG$DEPTH
@@ -210,7 +210,7 @@ y[2] <- dt2$FINAL_TEST_ACCURACY
 dt3 <- fromJSON("~/dev/CI6227DataMiningProject/log/10000_dataset/depth_4")
 x[3] <- 10000
 y[3] <- dt3$FINAL_TEST_ACCURACY
-plot(x,y,type="l",col="red",lty=1,xlab="Data Number",ylab="Test Accuracy",ylim=c(0.8,1))
+plot(x,y,type="b",col="red",lty="solid",xlab="Data Number",ylab="Test Accuracy",ylim=c(0.8,1))
 
 dt1 <- fromJSON("~/dev/CI6227DataMiningProject/log/1000_dataset/train_iter_300")
 x[1] <- 1000
@@ -233,18 +233,19 @@ y[2] <- dt2$FINAL_TEST_ACCURACY
 dt3 <- fromJSON("~/dev/CI6227DataMiningProject/log/10000_dataset/learing_rate_0.300000")
 x[3] <- 10000
 y[3] <- dt3$FINAL_TEST_ACCURACY
-points(x,y,type="l",col="green",lty=1,xlab="Data Number",ylab="Test Accuracy")
+points(x,y,type="l",col="green",lty=1,xlab="Data Number",ylab="Test Accuracy",cex=2)
+text(x,y,c("Depth","Train Iteration","Learning Rate"))
 legend("topleft",legend=c("Depth","Train Iteration","Learning Rate"),col=c("red","blue","green"),pt.cex=1, cex=0.7, lty=c(1,1,1),bty="n", y.intersp=2)
 
 
-
-#str(data)
+data <- fromJSON("~/dev/CI6227DataMiningProject/dataset/test_dataset/attr_label_dataset.json")
+str(data)
 #####histogram
-#hist(data$AGE,xlab="AGE",main="Histogram of AGE",xlim=c(15,40))
-#hist(data$LABEL,xlab="LABEL",main="Histogram of LABEL")
-#hist(data$NATION,xlab="NATION",main="Histogram of NATION")
-#hist(data$SAVING_TIME,xlab="SAVING TIME",main="Histogram of SAVING TIME")
-#hist(data$YELLOW_RED_CARD_NUMBER,xlab="YELLOW_RED_CARD_NUMBER",main="Histogram of YELLOW RED CARD NUMBER",cex.main=0.9, xlim=c(0,10), ylim=c(0,250))
+hist(data$AGE,xlab="Age",main="Histogram of Age",xlim=c(15,40))
+hist(data$LABEL,xlab="Label",main="Histogram of Label")
+hist(data$NATION,xlab="Nation",main="Histogram of Nation")
+hist(data$SAVING_TIME,xlab="Saving Time",main="Histogram of Saving Time")
+hist(data$YELLOW_RED_CARD_NUMBER,xlab="Yellow Red Card Number",main="Histogram of Yellow Red Card Number",cex.main=0.9, xlim=c(0,10), ylim=c(0,250))
 ###density plot
 #plot(hist(data$AVE_ASSISTANCE),main="Average Assistance Number")
 #plot(ecdf(data$AVE_ASSISTANCE),main="Average Assistance Number")

@@ -14,7 +14,7 @@
     "AVE_TACKLING": [0, 3, 1, -1],
     "HEIGHT": [0, 0, 0, 0],
     "NATION": [0, 0, 0, 0],
-    "SAVING_TIME": [500, -100, -100, -100],
+    "SAVING_TIME": [500, -100, -100, -100], 
     "SPEED": [0, -1, 2, 4],
     "WEIGHT": [0, 0, 0, 0],
     "YELLOW_RED_CARD_NUMBER": [1, 5, 3, -1]

@@ -1,0 +1,296 @@
+rm(list=ls())
+library(jsonlite)
+###Stringify some data from data frame to JSON
+
+data <- fromJSON("attr_label_dataset.json")
+x <- vector()
+y <- vector()
+
+
+depth1 <- fromJSON("~/dev/CI6227DataMiningProject/log/1000_dataset/depth_1")
+x[1] <- depth1$EXP_CONFIG$DEPTH
+y[1] <- depth1$FINAL_TEST_ACCURACY
+depth2 <- fromJSON("~/dev/CI6227DataMiningProject/log/1000_dataset/depth_2")
+x[2] <- depth2$EXP_CONFIG$DEPTH
+y[2] <- depth2$FINAL_TEST_ACCURACY
+depth3 <- fromJSON("~/dev/CI6227DataMiningProject/log/1000_dataset/depth_3")
+x[3] <- depth3$EXP_CONFIG$DEPTH
+y[3] <- depth3$FINAL_TEST_ACCURACY
+depth4 <- fromJSON("~/dev/CI6227DataMiningProject/log/1000_dataset/depth_4")
+x[4] <- depth4$EXP_CONFIG$DEPTH
+y[4] <- depth4$FINAL_TEST_ACCURACY
+depth5 <- fromJSON("~/dev/CI6227DataMiningProject/log/1000_dataset/depth_6")
+x[5] <- depth5$EXP_CONFIG$DEPTH
+y[5] <- depth5$FINAL_TEST_ACCURACY
+depth6 <- fromJSON("~/dev/CI6227DataMiningProject/log/1000_dataset/depth_8")
+x[6] <- depth6$EXP_CONFIG$DEPTH
+y[6] <- depth6$FINAL_TEST_ACCURACY
+depth7 <- fromJSON("~/dev/CI6227DataMiningProject/log/1000_dataset/depth_10")
+x[7] <- depth7$EXP_CONFIG$DEPTH
+y[7] <- depth7$FINAL_TEST_ACCURACY
+depth8 <- fromJSON("~/dev/CI6227DataMiningProject/log/1000_dataset/depth_12")
+x[8] <- depth8$EXP_CONFIG$DEPTH
+y[8] <- depth8$FINAL_TEST_ACCURACY
+depth9 <- fromJSON("~/dev/CI6227DataMiningProject/log/1000_dataset/depth_14")
+x[9] <- depth9$EXP_CONFIG$DEPTH
+y[9] <- depth9$FINAL_TEST_ACCURACY
+plot(x,y,type="l",col="red",lty=1,xlab="Depth",ylab="Test Accuracy",ylim=c(0.8,1))
+
+depth1 <- fromJSON("~/dev/CI6227DataMiningProject/log/5000_dataset/depth_1")
+x[1] <- depth1$EXP_CONFIG$DEPTH
+y[1] <- depth1$FINAL_TEST_ACCURACY
+depth2 <- fromJSON("~/dev/CI6227DataMiningProject/log/5000_dataset/depth_2")
+x[2] <- depth2$EXP_CONFIG$DEPTH
+y[2] <- depth2$FINAL_TEST_ACCURACY
+depth3 <- fromJSON("~/dev/CI6227DataMiningProject/log/5000_dataset/depth_3")
+x[3] <- depth3$EXP_CONFIG$DEPTH
+y[3] <- depth3$FINAL_TEST_ACCURACY
+depth4 <- fromJSON("~/dev/CI6227DataMiningProject/log/5000_dataset/depth_4")
+x[4] <- depth4$EXP_CONFIG$DEPTH
+y[4] <- depth4$FINAL_TEST_ACCURACY
+depth5 <- fromJSON("~/dev/CI6227DataMiningProject/log/5000_dataset/depth_6")
+x[5] <- depth5$EXP_CONFIG$DEPTH
+y[5] <- depth5$FINAL_TEST_ACCURACY
+depth6 <- fromJSON("~/dev/CI6227DataMiningProject/log/5000_dataset/depth_8")
+x[6] <- depth6$EXP_CONFIG$DEPTH
+y[6] <- depth6$FINAL_TEST_ACCURACY
+depth7 <- fromJSON("~/dev/CI6227DataMiningProject/log/5000_dataset/depth_10")
+x[7] <- depth7$EXP_CONFIG$DEPTH
+y[7] <- depth7$FINAL_TEST_ACCURACY
+depth8 <- fromJSON("~/dev/CI6227DataMiningProject/log/5000_dataset/depth_12")
+x[8] <- depth8$EXP_CONFIG$DEPTH
+y[8] <- depth8$FINAL_TEST_ACCURACY
+depth9 <- fromJSON("~/dev/CI6227DataMiningProject/log/5000_dataset/depth_14")
+x[9] <- depth9$EXP_CONFIG$DEPTH
+y[9] <- depth9$FINAL_TEST_ACCURACY
+points(x,y,type="l",col="green",lty=1,xlab="Depth",ylab="Test Accuracy")
+
+depth1 <- fromJSON("~/dev/CI6227DataMiningProject/log/10000_dataset/depth_1")
+x[1] <- depth1$EXP_CONFIG$DEPTH
+y[1] <- depth1$FINAL_TEST_ACCURACY
+depth2 <- fromJSON("~/dev/CI6227DataMiningProject/log/10000_dataset/depth_2")
+x[2] <- depth2$EXP_CONFIG$DEPTH
+y[2] <- depth2$FINAL_TEST_ACCURACY
+depth3 <- fromJSON("~/dev/CI6227DataMiningProject/log/10000_dataset/depth_3")
+x[3] <- depth3$EXP_CONFIG$DEPTH
+y[3] <- depth3$FINAL_TEST_ACCURACY
+depth4 <- fromJSON("~/dev/CI6227DataMiningProject/log/10000_dataset/depth_4")
+x[4] <- depth4$EXP_CONFIG$DEPTH
+y[4] <- depth4$FINAL_TEST_ACCURACY
+depth5 <- fromJSON("~/dev/CI6227DataMiningProject/log/10000_dataset/depth_6")
+x[5] <- depth5$EXP_CONFIG$DEPTH
+y[5] <- depth5$FINAL_TEST_ACCURACY
+depth6 <- fromJSON("~/dev/CI6227DataMiningProject/log/10000_dataset/depth_8")
+x[6] <- depth6$EXP_CONFIG$DEPTH
+y[6] <- depth6$FINAL_TEST_ACCURACY
+depth7 <- fromJSON("~/dev/CI6227DataMiningProject/log/10000_dataset/depth_10")
+x[7] <- depth7$EXP_CONFIG$DEPTH
+y[7] <- depth7$FINAL_TEST_ACCURACY
+depth8 <- fromJSON("~/dev/CI6227DataMiningProject/log/10000_dataset/depth_12")
+x[8] <- depth8$EXP_CONFIG$DEPTH
+y[8] <- depth8$FINAL_TEST_ACCURACY
+depth9 <- fromJSON("~/dev/CI6227DataMiningProject/log/10000_dataset/depth_14")
+x[9] <- depth9$EXP_CONFIG$DEPTH
+y[9] <- depth9$FINAL_TEST_ACCURACY
+points(x,y,type="l",col="blue",lty=1,xlab="Depth",ylab="Test Accuracy")
+legend("topright",legend=c("1000 dataSet","5000 dataSet","10000 dataSet"),col=c("red","green","blue"),lty=c(1,1,1),bty="n",pt.cex=1, cex=0.7, y.intersp=2)
+
+rm(list=ls())
+x <- vector()
+y <- vector()
+lq1 <- fromJSON("~/dev/CI6227DataMiningProject/log/1000_dataset/learing_rate_0.010000")
+x[1] <- lq1$EXP_CONFIG$LEARNING_RATE
+y[1] <- lq1$FINAL_TEST_ACCURACY
+lq2 <- fromJSON("~/dev/CI6227DataMiningProject/log/1000_dataset/learing_rate_0.030000")
+x[2] <- lq2$EXP_CONFIG$LEARNING_RATE
+y[2] <- lq2$FINAL_TEST_ACCURACY
+lq3 <- fromJSON("~/dev/CI6227DataMiningProject/log/1000_dataset/learing_rate_0.100000")
+x[3] <- lq3$EXP_CONFIG$LEARNING_RATE
+y[3] <- lq3$FINAL_TEST_ACCURACY
+lq4 <- fromJSON("~/dev/CI6227DataMiningProject/log/1000_dataset/learing_rate_0.300000")
+x[4] <- lq4$EXP_CONFIG$LEARNING_RATE
+y[4] <- lq4$FINAL_TEST_ACCURACY
+plot(x,y,type="l",col="red",lty=2,xlab="Learning Rate",ylab="Test Accuracy",ylim=c(0.8,1))
+
+lq1 <- fromJSON("~/dev/CI6227DataMiningProject/log/5000_dataset/learing_rate_0.010000")
+x[1] <- lq1$EXP_CONFIG$LEARNING_RATE
+y[1] <- lq1$FINAL_TEST_ACCURACY
+lq2 <- fromJSON("~/dev/CI6227DataMiningProject/log/5000_dataset/learing_rate_0.030000")
+x[2] <- lq2$EXP_CONFIG$LEARNING_RATE
+y[2] <- lq2$FINAL_TEST_ACCURACY
+lq3 <- fromJSON("~/dev/CI6227DataMiningProject/log/5000_dataset/learing_rate_0.100000")
+x[3] <- lq3$EXP_CONFIG$LEARNING_RATE
+y[3] <- lq3$FINAL_TEST_ACCURACY
+lq4 <- fromJSON("~/dev/CI6227DataMiningProject/log/5000_dataset/learing_rate_0.300000")
+x[4] <- lq4$EXP_CONFIG$LEARNING_RATE
+y[4] <- lq4$FINAL_TEST_ACCURACY
+points(x,y,type="l",col="blue",lty=2,xlab="Learning Rate",ylab="Test Accuracy")
+
+
+lq1 <- fromJSON("~/dev/CI6227DataMiningProject/log/10000_dataset/learing_rate_0.010000")
+x[1] <- lq1$EXP_CONFIG$LEARNING_RATE
+y[1] <- lq1$FINAL_TEST_ACCURACY
+lq2 <- fromJSON("~/dev/CI6227DataMiningProject/log/10000_dataset/learing_rate_0.030000")
+x[2] <- lq2$EXP_CONFIG$LEARNING_RATE
+y[2] <- lq2$FINAL_TEST_ACCURACY
+lq3 <- fromJSON("~/dev/CI6227DataMiningProject/log/10000_dataset/learing_rate_0.100000")
+x[3] <- lq3$EXP_CONFIG$LEARNING_RATE
+y[3] <- lq3$FINAL_TEST_ACCURACY
+lq4 <- fromJSON("~/dev/CI6227DataMiningProject/log/10000_dataset/learing_rate_0.300000")
+x[4] <- lq4$EXP_CONFIG$LEARNING_RATE
+y[4] <- lq4$FINAL_TEST_ACCURACY
+points(x,y,type="l",col="green",lty=2,xlab="Learning Rate",ylab="Test Accuracy")
+legend("topright",legend=c("1000 dataSet","5000 dataSet","10000 dataSet"),col=c("red","blue","green"),lty=c(2,2,2),bty="n",pt.cex=1, cex=0.7, y.intersp=2)
+
+rm(list=ls())
+x <- vector()
+y <- vector()
+ti1 <- fromJSON("~/dev/CI6227DataMiningProject/log/1000_dataset/train_iter_10")
+x[1] <- 10
+y[1] <- ti1$FINAL_TEST_ACCURACY
+ti2 <- fromJSON("~/dev/CI6227DataMiningProject/log/1000_dataset/train_iter_50")
+x[2] <- 50
+y[2] <- ti2$FINAL_TEST_ACCURACY
+ti3 <- fromJSON("~/dev/CI6227DataMiningProject/log/1000_dataset/train_iter_100")
+x[3] <- 100
+y[3] <- ti3$FINAL_TEST_ACCURACY
+ti4 <- fromJSON("~/dev/CI6227DataMiningProject/log/1000_dataset/train_iter_300")
+x[4] <- 300
+y[4] <- ti4$FINAL_TEST_ACCURACY
+ti4 <- fromJSON("~/dev/CI6227DataMiningProject/log/1000_dataset/train_iter_500")
+x[4] <- 500
+y[4] <- ti4$FINAL_TEST_ACCURACY
+plot(x,y,type="l",col="red",lty=3,xlab="Train Iteration",ylab="Test Accuracy",ylim=c(0.8,1))
+
+ti1 <- fromJSON("train_iter_10")
+x[1] <- 10
+y[1] <- ti1$FINAL_TEST_ACCURACY
+ti2 <- fromJSON("~/dev/CI6227DataMiningProject/log/5000_dataset/train_iter_50")
+x[2] <- 50
+y[2] <- ti2$FINAL_TEST_ACCURACY
+ti3 <- fromJSON("~/dev/CI6227DataMiningProject/log/5000_dataset/train_iter_100")
+x[3] <- 100
+y[3] <- ti3$FINAL_TEST_ACCURACY
+ti4 <- fromJSON("~/dev/CI6227DataMiningProject/log/5000_dataset/train_iter_300")
+x[4] <- 300
+y[4] <- ti4$FINAL_TEST_ACCURACY
+ti4 <- fromJSON("~/dev/CI6227DataMiningProject/log/5000_dataset/train_iter_500")
+x[4] <- 500
+y[4] <- ti4$FINAL_TEST_ACCURACY
+points(x,y,type="l",col="blue",lty=3,xlab="Train Iteration",ylab="Test Accuracy")
+
+
+ti1 <- fromJSON("train_iter_10")
+x[1] <- 10
+y[1] <- ti1$FINAL_TEST_ACCURACY
+ti2 <- fromJSON("~/dev/CI6227DataMiningProject/log/10000_dataset/train_iter_50")
+x[2] <- 50
+y[2] <- ti2$FINAL_TEST_ACCURACY
+ti3 <- fromJSON("~/dev/CI6227DataMiningProject/log/10000_dataset/train_iter_100")
+x[3] <- 100
+y[3] <- ti3$FINAL_TEST_ACCURACY
+ti4 <- fromJSON("~/dev/CI6227DataMiningProject/log/10000_dataset/train_iter_300")
+x[4] <- 300
+y[4] <- ti4$FINAL_TEST_ACCURACY
+ti4 <- fromJSON("~/dev/CI6227DataMiningProject/log/10000_dataset/train_iter_500")
+x[4] <- 500
+y[4] <- ti4$FINAL_TEST_ACCURACY
+points(x,y,type="l",col="green",lty=3,xlab="Train Iteration",ylab="Test Accuracy")
+legend("topright",legend=c("1000 dataSet","5000 dataSet","10000 dataSet"),col=c("red","blue","green"),lty=c(3,3,3),bty="n",pt.cex=1, cex=0.7, y.intersp=2)
+
+rm(list=ls())
+x <- vector()
+y <- vector()
+dt1 <- fromJSON("~/dev/CI6227DataMiningProject/log/1000_dataset/depth_4")
+x[1] <- 1000
+y[1] <- dt1$FINAL_TEST_ACCURACY
+dt2 <- fromJSON("~/dev/CI6227DataMiningProject/log/5000_dataset/depth_4")
+x[2] <- 5000
+y[2] <- dt2$FINAL_TEST_ACCURACY
+dt3 <- fromJSON("~/dev/CI6227DataMiningProject/log/10000_dataset/depth_4")
+x[3] <- 10000
+y[3] <- dt3$FINAL_TEST_ACCURACY
+plot(x,y,type="l",col="red",lty=1,xlab="Data Number",ylab="Test Accuracy",ylim=c(0.8,1))
+
+dt1 <- fromJSON("~/dev/CI6227DataMiningProject/log/1000_dataset/train_iter_300")
+x[1] <- 1000
+y[1] <- dt1$FINAL_TEST_ACCURACY
+dt2 <- fromJSON("~/dev/CI6227DataMiningProject/log/5000_dataset/train_iter_300")
+x[2] <- 5000
+y[2] <- dt2$FINAL_TEST_ACCURACY
+dt3 <- fromJSON("~/dev/CI6227DataMiningProject/log/10000_dataset/train_iter_300")
+x[3] <- 10000
+y[3] <- dt3$FINAL_TEST_ACCURACY
+points(x,y,type="l",col="blue",lty=1,xlab="Data Number",ylab="Test Accuracy")
+
+
+dt1 <- fromJSON("~/dev/CI6227DataMiningProject/log/1000_dataset/learing_rate_0.300000")
+x[1] <- 1000
+y[1] <- dt1$FINAL_TEST_ACCURACY
+dt2 <- fromJSON("~/dev/CI6227DataMiningProject/log/5000_dataset/learing_rate_0.300000")
+x[2] <- 5000
+y[2] <- dt2$FINAL_TEST_ACCURACY
+dt3 <- fromJSON("~/dev/CI6227DataMiningProject/log/10000_dataset/learing_rate_0.300000")
+x[3] <- 10000
+y[3] <- dt3$FINAL_TEST_ACCURACY
+points(x,y,type="l",col="green",lty=1,xlab="Data Number",ylab="Test Accuracy")
+legend("topleft",legend=c("Depth","Train Iteration","Learning Rate"),col=c("red","blue","green"),pt.cex=1, cex=0.7, lty=c(1,1,1),bty="n", y.intersp=2)
+
+
+
+#str(data)
+#####histogram
+#hist(data$AGE,xlab="AGE",main="Histogram of AGE",xlim=c(15,40))
+#hist(data$LABEL,xlab="LABEL",main="Histogram of LABEL")
+#hist(data$NATION,xlab="NATION",main="Histogram of NATION")
+#hist(data$SAVING_TIME,xlab="SAVING TIME",main="Histogram of SAVING TIME")
+#hist(data$YELLOW_RED_CARD_NUMBER,xlab="YELLOW_RED_CARD_NUMBER",main="Histogram of YELLOW RED CARD NUMBER",cex.main=0.9, xlim=c(0,10), ylim=c(0,250))
+###density plot
+#plot(hist(data$AVE_ASSISTANCE),main="Average Assistance Number")
+#plot(ecdf(data$AVE_ASSISTANCE),main="Average Assistance Number")
+
+# mean(data$AVE_ASSISTANCE)
+# sd(data$AVE_ASSISTANCE)
+
+#plot(hist(data$SPEED),main="Speed")
+#plot(ecdf(data$SPEED),main="Speed")
+#plot(density(data$SPEED),main="Speed")
+#plot(hist(data$WEIGHT),main="Weight")
+#plot(ecdf(data$WEIGHT),main="Weight")
+#plot(hist(data$AVE_FOUL),main="Average Fouls Number")
+#plot(ecdf(data$AVE_FOUL),main="Average Fouls Number")
+
+#plot(hist(data$AVE_SCORE),main="Average Scores Number Per Game", cex.main=0.9)
+#plot(ecdf(data$AVE_SCORE),main="Average Scores Number Per Game", cex.main=0.9)
+
+#plot(hist(data$AVE_STEALING),main="Average Stealing Number")
+#plot(ecdf(data$AVE_STEALING),main="Average Stealing Number")
+
+#plot(hist(data$AVE_TACKLING),main="Average Tacking Number")
+#plot(ecdf(data$AVE_TACKLING),main="Average Tacking Number")
+
+#plot(hist(data$HEIGHT),main="Height")
+#plot(ecdf(data$HEIGHT),main="Height")
+
+
+data3 <- fromJSON("~/dev/CI6227DataMiningProject/dataset/label_config.json")
+importance <- data3$CLASS_WEIGHT_WITH_ATTR
+weight <- matrix(nrow=12,ncol=4)
+xvalue <- vector()
+for(i in 1:12){
+  weight[i,] <-importance[[i]]
+  xvalue[i] <- sqrt(sum(weight[i,]^2))
+}
+data4 <- fromJSON("learing_rate_0.010000")
+yvalue <- vector()
+for(i in 1:12){
+  yvalue[i] <- data4$FEATURE_IMPORTANCE[[i]]
+}
+####take log 
+plot(log(xvalue[-9]),yvalue[-9],ylab="Feather Importance",xlab="Feature Weight L2-Norm",col= "blue", pch = 19, cex = 1, lty = "solid", lwd = 2)
+text(log(xvalue[-9]),yvalue[-9],labels=names(importance),cex=0.5,pos=1)
+
+plot(log(xvalue),yvalue,ylab="Feather Importance",xlab="Feature Weight L2-Norm",col= "blue", pch = 19, cex = 1, lty = "solid", lwd = 2)
+text(log(xvalue),yvalue,labels=names(importance),cex=0.3,pos=1)
+
+     
